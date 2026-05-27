@@ -18,7 +18,7 @@
 html { font-size: 15px; }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
   background: #f3f4f6;
   color: var(--text);
   line-height: 1.6;
