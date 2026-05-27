@@ -130,6 +130,7 @@ header h1 {
 /* ── Cuerpo ───────────────────────────────── */
 .page-body {
   padding: 2.2rem 3.6rem 3rem;
+  background: linear-gradient(160deg, #faf8ff 0%, #f3f0fc 100%);
 }
 
 hr { display: none; }
@@ -160,19 +161,49 @@ section h2 {
 .exp-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .85rem;
+  gap: 1rem;
 }
 
 .exp-card {
-  background: #faf9ff;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
-  padding: 1.15rem 1.3rem;
+  background: linear-gradient(145deg,
+    rgba(255,255,255,.92) 0%,
+    rgba(237,233,254,.38) 100%
+  );
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter:         blur(18px) saturate(1.5);
+  border: 1px solid rgba(196,181,253,.42);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
   display: flex;
   flex-direction: column;
-  gap: .32rem;
-  box-shadow: 0 2px 8px rgba(109,40,217,.06);
+  gap: .35rem;
+  box-shadow:
+    0 4px 24px rgba(109,40,217,.09),
+    0 1px 4px  rgba(109,40,217,.05),
+    inset 0 1px 0 rgba(255,255,255,.8);
+  transition: box-shadow .22s ease, transform .22s ease;
+  position: relative;
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(196,181,253,.7) 50%,
+    transparent 100%
+  );
+  border-radius: 12px 12px 0 0;
+}
+
+.exp-card:hover {
+  box-shadow:
+    0 8px 32px rgba(109,40,217,.14),
+    0 2px 8px  rgba(109,40,217,.08),
+    inset 0 1px 0 rgba(255,255,255,.85);
+  transform: translateY(-2px);
 }
 
 .exp-card-top {
@@ -406,11 +437,14 @@ section h2 {
   .tags { display: none; }
 
   .exp-card {
-    background: #faf9ff !important;
-    border-left: 3px solid var(--accent) !important;
+    background: #ffffff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
     box-shadow: none !important;
+    border: 1px solid #e2d9f3 !important;
     break-inside: avoid;
   }
+  .exp-card::before { display: none; }
 
   .exp-grid { gap: .55rem; }
 
