@@ -415,39 +415,34 @@ a.proj-card { text-decoration: none; color: inherit; }
   font-size: .9rem;
   font-weight: 600;
   color: var(--text);
-  transition: color .26s;
+  transition: opacity .22s ease;
 }
 
-.proj-card:hover h3 { color: #ffffff; }
-
-.proj-card .tag {
-  transition: background .26s, color .26s;
-}
-.proj-card:hover .tag {
-  background: rgba(255,255,255,.2);
-  color: rgba(255,255,255,.95);
+.proj-card .tags {
+  transition: opacity .22s ease;
 }
 
-/* CTA que aparece al hover */
+/* En hover: contenido se desvanece */
+.proj-card:hover h3,
+.proj-card:hover .tags { opacity: 0; }
+
+/* CTA superpuesto y centrado, sin ocupar espacio */
 .proj-hover-label {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
-  gap: .28rem;
-  font-size: .75rem;
-  font-weight: 600;
-  margin-top: auto;
-  padding-top: .55rem;
+  justify-content: center;
+  gap: .35rem;
+  font-size: .84rem;
+  font-weight: 700;
+  letter-spacing: .1px;
+  color: #ffffff;
   opacity: 0;
-  color: rgba(255,255,255,0);
-  transform: translateY(6px);
-  transition: opacity .22s ease, transform .22s ease, color .22s ease;
+  transition: opacity .22s ease;
 }
 
-.proj-card:hover .proj-hover-label {
-  opacity: 1;
-  transform: translateY(0);
-  color: rgba(255,255,255,.95);
-}
+.proj-card:hover .proj-hover-label { opacity: 1; }
 
 /* ── Habilidades ─────────────────────────── */
 .skills-grid {
