@@ -79,14 +79,44 @@ header h1 {
 
 .contact-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: .3rem 1.1rem;
-  margin-top: .85rem;
-  font-size: .78rem;
-  color: #94a3b8;
+  align-items: center;
+  gap: .9rem;
+  margin-top: 1rem;
 }
-.contact-row a { color: #94a3b8; text-decoration: none; }
-.contact-row a:hover { color: #a78bfa; }
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  color: #5d7290;
+  text-decoration: none;
+  transition: color .18s ease;
+  line-height: 1;
+}
+.contact-icon:hover { color: #a78bfa; }
+.contact-icon svg { display: block; width: 17px; height: 17px; }
+
+/* Location — texto que se revela en hover */
+.contact-loc { cursor: default; }
+
+.contact-loc .loc-text {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 0;
+  white-space: nowrap;
+  opacity: 0;
+  font-size: .78rem;
+  margin-left: 0;
+  vertical-align: middle;
+  line-height: 1;
+  transition: max-width .32s ease, opacity .25s ease, margin-left .28s ease;
+}
+.contact-loc:hover { color: #a78bfa; }
+.contact-loc:hover .loc-text {
+  max-width: 130px;
+  opacity: 1;
+  margin-left: .38rem;
+  color: #a78bfa;
+}
 
 /* ── Cuerpo ───────────────────────────────── */
 .page-body {
