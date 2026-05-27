@@ -364,6 +364,8 @@ section h2 {
   gap: 1rem;
 }
 
+a.proj-card { text-decoration: none; color: inherit; }
+
 .proj-card {
   background: linear-gradient(145deg,
     rgba(255,255,255,.92) 0%,
@@ -373,16 +375,17 @@ section h2 {
   backdrop-filter:         blur(18px) saturate(1.5);
   border: 1px solid rgba(196,181,253,.42);
   border-radius: 12px;
-  padding: 1.1rem 1.25rem;
+  padding: 1.1rem 1.25rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: .28rem;
+  gap: .4rem;
   box-shadow:
     0 4px 24px rgba(109,40,217,.09),
     0 1px 4px  rgba(109,40,217,.05),
     inset 0 1px 0 rgba(255,255,255,.8);
-  transition: box-shadow .22s ease, transform .22s ease;
+  transition: background .26s, border-color .26s, box-shadow .22s, transform .22s;
   position: relative;
+  cursor: pointer;
 }
 
 .proj-card::before {
@@ -390,41 +393,60 @@ section h2 {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg,
-    transparent 0%, rgba(196,181,253,.7) 50%, transparent 100%
-  );
+  background: linear-gradient(90deg, transparent, rgba(196,181,253,.7), transparent);
   border-radius: 12px 12px 0 0;
+  transition: background .26s;
 }
 
 .proj-card:hover {
+  background: var(--accent);
+  border-color: transparent;
   box-shadow:
-    0 8px 32px rgba(109,40,217,.14),
-    0 2px 8px  rgba(109,40,217,.08),
-    inset 0 1px 0 rgba(255,255,255,.85);
-  transform: translateY(-2px);
+    0 12px 40px rgba(109,40,217,.44),
+    0 3px 10px rgba(109,40,217,.22);
+  transform: translateY(-4px);
+}
+
+.proj-card:hover::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
 }
 
 .proj-card h3 {
-  font-size: .875rem;
+  font-size: .9rem;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.2;
+  transition: color .26s;
 }
-.proj-card h3 a { color: var(--text); text-decoration: none; }
-.proj-card h3 a:hover { color: var(--accent); }
 
-.proj-year {
-  font-size: .72rem;
-  color: var(--muted);
+.proj-card:hover h3 { color: #ffffff; }
+
+.proj-card .tag {
+  transition: background .26s, color .26s;
 }
-.proj-year a { color: var(--muted); text-decoration: none; }
-.proj-year a:hover { color: var(--accent); }
+.proj-card:hover .tag {
+  background: rgba(255,255,255,.2);
+  color: rgba(255,255,255,.95);
+}
 
-.proj-desc {
-  font-size: .82rem;
-  color: var(--soft);
-  margin-top: .1rem;
-  line-height: 1.5;
+/* CTA que aparece al hover */
+.proj-hover-label {
+  display: flex;
+  align-items: center;
+  gap: .28rem;
+  font-size: .75rem;
+  font-weight: 600;
+  margin-top: auto;
+  padding-top: .55rem;
+  opacity: 0;
+  color: rgba(255,255,255,0);
+  transform: translateY(6px);
+  transition: opacity .22s ease, transform .22s ease, color .22s ease;
+}
+
+.proj-card:hover .proj-hover-label {
+  opacity: 1;
+  transform: translateY(0);
+  color: rgba(255,255,255,.95);
 }
 
 /* ── Habilidades ─────────────────────────── */
@@ -486,62 +508,65 @@ section h2 {
 }
 
 /* ═══════════════════════════════════════════
-   PRINT — PDF limpio con Ctrl + P
+   PRINT — PDF limpio A4, una carilla
 ═══════════════════════════════════════════ */
 @media print {
-  @page { size: A4; margin: 12mm 16mm; }
+  @page { size: A4; margin: 7mm 11mm; }
 
-  html { font-size: 10pt; }
-  body { background: white; }
+  html { font-size: 8.8pt; }
+  body { background: white; margin: 0; padding: 0; }
 
-  .download-bar { display: none; }
+  .toolbar, .download-bar { display: none !important; }
 
   .page {
     max-width: 100%;
     margin: 0;
     box-shadow: none;
     border-radius: 0;
+    border: none;
+    outline: none;
   }
 
   header {
     background: #0f172a !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    padding: 1.8rem 3.6rem 1.6rem;
+    padding: 1.1rem 2.6rem .9rem;
+    border-radius: 0;
   }
 
-  header h1 { color: #ffffff !important; }
-  .cv-title { color: #a78bfa !important; }
+  header h1 { font-size: 1.55rem !important; color: #ffffff !important; }
+  .cv-title { color: #a78bfa !important; font-size: .82rem !important; }
+  .contact-row { margin-top: .5rem !important; gap: .8rem !important; }
   .contact-row, .contact-row a { color: #94a3b8 !important; }
+  .contact-icon svg { width: 13px !important; height: 13px !important; }
 
-  .page-body { padding: 1.4rem 3.6rem 2rem; }
+  .page-body { padding: .8rem 2.6rem .8rem; background: white !important; }
 
-  a { text-decoration: none; }
+  a { text-decoration: none; color: inherit; }
 
-  .tags { display: none; }
+  section { margin-bottom: .65rem; page-break-inside: avoid; }
 
-  .exp-card {
-    background: #ffffff !important;
+  /* Sin bordes, sin fondos, sin sombras */
+  .exp-card, .proj-card {
+    background: transparent !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
     box-shadow: none !important;
-    border: 1px solid #e2d9f3 !important;
+    border: none !important;
     break-inside: avoid;
+    padding: .4rem .55rem;
   }
-  .exp-card::before,
-  .proj-card::before { display: none; }
+  .exp-card::before, .proj-card::before { display: none; }
 
-  .proj-card {
-    background: #ffffff !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-    box-shadow: none !important;
-    border: 1px solid #e2d9f3 !important;
-    break-inside: avoid;
-  }
+  .exp-grid { gap: .25rem; page-break-inside: avoid; }
+  .proj-grid { gap: .25rem; }
 
-  .exp-grid { gap: .55rem; }
+  .tags { display: none !important; }
+  .proj-hover-label { display: none !important; }
 
-  section { margin-bottom: 1.2rem; page-break-inside: avoid; }
-  .exp-grid { page-break-inside: avoid; }
+  .exp-card-top h3 { font-size: .8rem; }
+  .bullets li { font-size: .76rem; }
+  .skills-grid { gap: .25rem 1.4rem; }
+  .skill-group .values { font-size: .74rem; }
 }
