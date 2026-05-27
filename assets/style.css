@@ -1,29 +1,28 @@
 /* ─────────────────────────────────────────────
    CV — Carlos Mesa Viera
-   Inter · Pantalla + impresión A4
+   Inter · v3 — dark header · accent cards
 ───────────────────────────────────────────── */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --accent:        #6d28d9;
+  --accent:        #7c3aed;
   --accent-light:  #ede9fe;
   --accent-border: #c4b5fd;
-  --text:          #111827;
-  --muted:         #6b7280;
-  --soft:          #374151;
-  --border:        #e5e7eb;
-  --bg:            #ffffff;
-  --page-w:        760px;
+  --text:          #1e293b;
+  --muted:         #64748b;
+  --soft:          #475569;
+  --border:        #e8e4f8;
+  --bg:            #eeecf6;
+  --page-w:        780px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { font-size: 15px; }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #f1f0f5;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
   color: var(--text);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -32,11 +31,11 @@ body {
 /* ── Barra descarga ───────────────────────── */
 .download-bar {
   max-width: var(--page-w);
-  margin: 1.8rem auto 0;
+  margin: 1.6rem auto 0;
   background: var(--accent-light);
   border: 1px solid var(--accent-border);
   border-radius: 6px;
-  padding: .55rem 1.4rem;
+  padding: .5rem 1.2rem;
   font-size: .78rem;
   color: var(--accent);
   display: flex;
@@ -49,62 +48,66 @@ body {
 /* ── Página ───────────────────────────────── */
 .page {
   max-width: var(--page-w);
-  margin: 1.6rem auto 3rem;
-  background: var(--bg);
-  padding: 3.2rem 5rem;           /* ← más espacio lateral */
-  box-shadow: 0 2px 20px rgba(0,0,0,.08);
-  border-radius: 6px;
+  margin: 1.2rem auto 3rem;
+  background: #ffffff;
+  box-shadow: 0 6px 40px rgba(109,40,217,.13);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* ── Cabecera ────────────────────────────── */
-header { margin-bottom: 1.5rem; }
+/* ── Cabecera oscura ─────────────────────── */
+header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: 2.8rem 3.6rem 2.4rem;
+}
 
 header h1 {
-  font-size: 1.95rem;
+  font-size: 2.1rem;
   font-weight: 700;
-  letter-spacing: -.4px;
-  color: var(--text);
+  letter-spacing: -.5px;
+  color: #ffffff;
   line-height: 1.1;
 }
 
 .cv-title {
-  font-size: .88rem;
+  font-size: .92rem;
   font-weight: 500;
-  color: var(--accent);
-  margin-top: .3rem;
-  letter-spacing: .1px;
+  color: #a78bfa;
+  margin-top: .4rem;
+  letter-spacing: .05px;
 }
 
 .contact-row {
   display: flex;
   flex-wrap: wrap;
-  gap: .35rem 1.2rem;
-  margin-top: .7rem;
+  gap: .3rem 1.1rem;
+  margin-top: .85rem;
   font-size: .78rem;
-  color: var(--muted);
+  color: #94a3b8;
 }
-.contact-row a { color: var(--muted); text-decoration: none; }
-.contact-row a:hover { color: var(--accent); }
+.contact-row a { color: #94a3b8; text-decoration: none; }
+.contact-row a:hover { color: #a78bfa; }
 
-/* ── Separador ───────────────────────────── */
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 1.3rem 0;
+/* ── Cuerpo ───────────────────────────────── */
+.page-body {
+  padding: 2.2rem 3.6rem 3rem;
 }
+
+hr { display: none; }
 
 /* ── Secciones ───────────────────────────── */
-section { margin-bottom: 1.5rem; }
+section { margin-bottom: 1.8rem; }
 
 section h2 {
-  font-size: .65rem;
+  font-size: .62rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.8px;
   color: var(--accent);
-  margin-bottom: .9rem;
-  padding-bottom: .35rem;
-  border-bottom: 1.5px solid var(--accent-light);
+  padding-left: .65rem;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 1rem;
+  line-height: 1;
 }
 
 /* ── Perfil ──────────────────────────────── */
@@ -114,24 +117,23 @@ section h2 {
   line-height: 1.65;
 }
 
-/* ── Experiencia — grid de cards ─────────── */
+/* ── Experiencia ─────────────────────────── */
 .exp-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .9rem;
+  gap: .85rem;
 }
 
 .exp-card {
-  background: rgba(255, 255, 255, 0.60);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(109, 40, 217, 0.14);
-  border-radius: 10px;
-  padding: 1.1rem 1.3rem;
-  box-shadow: 0 2px 16px rgba(109, 40, 217, 0.06);
+  background: #faf9ff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.15rem 1.3rem;
   display: flex;
   flex-direction: column;
-  gap: .35rem;
+  gap: .32rem;
+  box-shadow: 0 2px 8px rgba(109,40,217,.06);
 }
 
 .exp-card-top {
@@ -151,7 +153,7 @@ section h2 {
 .company-note {
   font-weight: 400;
   color: var(--muted);
-  font-size: .78rem;
+  font-size: .77rem;
   display: block;
   margin-top: .1rem;
 }
@@ -171,7 +173,7 @@ section h2 {
 }
 
 /* Entrada compacta dentro de card Otros */
-.otros-entry { margin-bottom: .55rem; }
+.otros-entry { margin-bottom: .5rem; }
 .otros-entry:last-child { margin-bottom: 0; }
 
 .otros-entry h4 {
@@ -192,24 +194,24 @@ section h2 {
 }
 
 .otros-entry p {
-  font-size: .8rem;
+  font-size: .80rem;
   color: var(--soft);
   margin-top: .15rem;
   line-height: 1.45;
 }
 
-/* Bullets cortos en lugar de párrafos */
+/* Bullets */
 .bullets {
   list-style: none;
-  margin-top: .45rem;
+  margin-top: .4rem;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: .25rem;
+  gap: .22rem;
 }
 
 .bullets li {
-  font-size: .84rem;
+  font-size: .83rem;
   color: var(--soft);
   line-height: 1.5;
   padding-left: 1rem;
@@ -226,25 +228,28 @@ section h2 {
 
 /* ── Tags ────────────────────────────────── */
 .tags {
-  margin-top: .4rem;
+  margin-top: .42rem;
   display: flex;
   flex-wrap: wrap;
-  gap: .25rem;
+  gap: .22rem;
 }
 
 .tag {
-  font-size: .67rem;
+  font-size: .65rem;
   font-weight: 600;
   background: var(--accent-light);
   color: var(--accent);
-  padding: .1rem .45rem;
+  padding: .1rem .42rem;
   border-radius: 3px;
-  letter-spacing: .1px;
 }
 
 /* ── Proyectos ───────────────────────────── */
-.project-item { margin-bottom: .9rem; }
-.project-item:last-child { margin-bottom: 0; }
+.project-item {
+  margin-bottom: .85rem;
+  padding-bottom: .85rem;
+  border-bottom: 1px solid var(--border);
+}
+.project-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 
 .proj-header {
   display: flex;
@@ -253,19 +258,11 @@ section h2 {
   gap: .5rem;
 }
 
-.proj-header h3 {
-  font-size: .88rem;
-  font-weight: 600;
-}
-
+.proj-header h3 { font-size: .875rem; font-weight: 600; }
 .proj-header h3 a { color: var(--text); text-decoration: none; }
 .proj-header h3 a:hover { color: var(--accent); }
 
-.proj-meta {
-  font-size: .73rem;
-  color: var(--muted);
-  white-space: nowrap;
-}
+.proj-meta { font-size: .73rem; color: var(--muted); white-space: nowrap; }
 .proj-meta a { color: var(--muted); text-decoration: none; }
 .proj-meta a:hover { color: var(--accent); }
 
@@ -280,16 +277,16 @@ section h2 {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: .5rem 2rem;
+  gap: .55rem 2rem;
 }
 
 .skill-group .label {
-  font-size: .65rem;
+  font-size: .62rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .9px;
   color: var(--muted);
-  margin-bottom: .18rem;
+  margin-bottom: .2rem;
 }
 
 .skill-group .values {
@@ -298,7 +295,7 @@ section h2 {
   line-height: 1.45;
 }
 
-/* ── Dos columnas (certs + edu) ──────────── */
+/* ── Dos columnas ────────────────────────── */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -308,10 +305,7 @@ section h2 {
 .cert-item, .edu-item { font-size: .84rem; }
 
 .cert-item .name,
-.edu-item .degree {
-  font-weight: 600;
-  color: var(--text);
-}
+.edu-item .degree { font-weight: 600; color: var(--text); }
 
 .cert-item .issuer,
 .edu-item .school {
@@ -331,7 +325,6 @@ section h2 {
 .lang-name { font-weight: 600; color: var(--text); }
 .lang-level { font-size: .78rem; color: var(--muted); }
 
-/* ── Nota adicional ──────────────────────── */
 .note {
   font-size: .78rem;
   color: var(--muted);
@@ -342,9 +335,9 @@ section h2 {
    PRINT — PDF limpio con Ctrl + P
 ═══════════════════════════════════════════ */
 @media print {
-  @page { size: A4; margin: 14mm 17mm; }
+  @page { size: A4; margin: 12mm 16mm; }
 
-  html { font-size: 10.5pt; }
+  html { font-size: 10pt; }
   body { background: white; }
 
   .download-bar { display: none; }
@@ -352,27 +345,36 @@ section h2 {
   .page {
     max-width: 100%;
     margin: 0;
-    padding: 0;
     box-shadow: none;
     border-radius: 0;
   }
 
-  a { color: inherit; text-decoration: none; }
+  header {
+    background: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 1.8rem 3.6rem 1.6rem;
+  }
+
+  header h1 { color: #ffffff !important; }
+  .cv-title { color: #a78bfa !important; }
+  .contact-row, .contact-row a { color: #94a3b8 !important; }
+
+  .page-body { padding: 1.4rem 3.6rem 2rem; }
+
+  a { text-decoration: none; }
 
   .tags { display: none; }
 
-  /* Glass → blanco limpio en PDF */
   .exp-card {
-    background: #ffffff;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    box-shadow: none;
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    background: #faf9ff !important;
+    border-left: 3px solid var(--accent) !important;
+    box-shadow: none !important;
+    break-inside: avoid;
   }
 
-  .exp-grid { gap: .6rem; }
+  .exp-grid { gap: .55rem; }
 
-  section { margin-bottom: 1rem; page-break-inside: avoid; }
+  section { margin-bottom: 1.2rem; page-break-inside: avoid; }
   .exp-grid { page-break-inside: avoid; }
 }
