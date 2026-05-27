@@ -114,41 +114,88 @@ section h2 {
   line-height: 1.65;
 }
 
-/* ── Experiencia ─────────────────────────── */
-.experience-item { margin-bottom: 1.1rem; }
-.experience-item:last-child { margin-bottom: 0; }
+/* ── Experiencia — grid de cards ─────────── */
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem;
+}
 
-.exp-header {
+.exp-card {
+  background: rgba(255, 255, 255, 0.60);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(109, 40, 217, 0.14);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  box-shadow: 0 2px 16px rgba(109, 40, 217, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.exp-card-top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: .5rem;
 }
 
-.exp-header h3 {
-  font-size: .9rem;
-  font-weight: 600;
+.exp-card-top h3 {
+  font-size: .88rem;
+  font-weight: 700;
   color: var(--text);
+  line-height: 1.2;
 }
 
-.exp-header h3 .company-note {
+.company-note {
   font-weight: 400;
   color: var(--muted);
-  font-size: .82rem;
+  font-size: .78rem;
+  display: block;
+  margin-top: .1rem;
 }
 
 .date {
-  font-size: .75rem;
+  font-size: .72rem;
   color: var(--muted);
   white-space: nowrap;
   flex-shrink: 0;
+  padding-top: .1rem;
 }
 
 .exp-place {
-  font-size: .78rem;
+  font-size: .75rem;
   color: var(--muted);
-  margin-top: .1rem;
   font-style: italic;
+}
+
+/* Entrada compacta dentro de card Otros */
+.otros-entry { margin-bottom: .55rem; }
+.otros-entry:last-child { margin-bottom: 0; }
+
+.otros-entry h4 {
+  font-size: .83rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem;
+}
+
+.otros-entry h4 span {
+  font-weight: 400;
+  font-size: .72rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.otros-entry p {
+  font-size: .8rem;
+  color: var(--soft);
+  margin-top: .15rem;
+  line-height: 1.45;
 }
 
 /* Bullets cortos en lugar de párrafos */
@@ -314,6 +361,18 @@ section h2 {
 
   .tags { display: none; }
 
+  /* Glass → blanco limpio en PDF */
+  .exp-card {
+    background: #ffffff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .exp-grid { gap: .6rem; }
+
   section { margin-bottom: 1rem; page-break-inside: avoid; }
-  .experience-item { page-break-inside: avoid; }
+  .exp-grid { page-break-inside: avoid; }
 }
