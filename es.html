@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/style.css?v=6"/>
+  <link rel="stylesheet" href="assets/style.css?v=7"/>
 </head>
 <body>
 
@@ -141,39 +141,36 @@
   <section>
     <h2>Proyectos</h2>
 
-    <div class="project-item">
-      <div class="proj-header">
-        <h3>ezBeep — Plataforma IoT de Retail e Inventario</h3>
-        <span class="proj-meta">2024 – actualidad · privado</span>
-      </div>
-      <p class="proj-desc">Producto completo: terminal IoT de pago, gestión de inventario, app móvil (Expo/React Native) y dashboard web (Next.js). Monorepo TypeScript con backend multi-tenant (Fastify + PostgreSQL + Docker).</p>
-      <div class="tags">
-        <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">React Native</span><span class="tag">Fastify</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
-      </div>
-    </div>
+    <div class="proj-grid">
 
-    <div class="project-item">
-      <div class="proj-header">
-        <h3><a href="https://github.com/cmesa-dev/kame" target="_blank">KAMEia — Asistente de Código con IA</a></h3>
-        <span class="proj-meta">2024 – actualidad</span>
+      <div class="proj-card">
+        <h3>ezBeep</h3>
+        <div class="proj-year">2024 – actualidad · privado</div>
+        <p class="proj-desc">Terminal IoT de pago, inventario, app móvil y dashboard web. Monorepo TypeScript multi-tenant.</p>
+        <div class="tags">
+          <span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Next.js</span><span class="tag">Fastify</span><span class="tag">Docker</span>
+        </div>
       </div>
-      <p class="proj-desc">Asistente IA con enrutamiento multi-LLM inteligente: Ollama → Gemini → GPT-4o → Claude. Local-first. Interfaces CLI, web y escritorio con memoria semántica entre sesiones.</p>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">Ollama</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">Claude</span>
-      </div>
-    </div>
 
-    <div class="project-item">
-      <div class="proj-header">
-        <h3><a href="https://github.com/cmesa-dev/onastudio" target="_blank">ONA Music Studio — Web de Producción</a></h3>
-        <span class="proj-meta">2024 · <a href="https://cmesa-dev.github.io/onastudio/" target="_blank">demo</a></span>
+      <div class="proj-card">
+        <h3><a href="https://github.com/cmesa-dev/kame" target="_blank">KAMEia</a></h3>
+        <div class="proj-year">2024 – actualidad</div>
+        <p class="proj-desc">Asistente IA multi-LLM. Ollama → Gemini → GPT-4o → Claude. Local-first.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Ollama</span><span class="tag">OpenAI</span><span class="tag">Claude</span>
+        </div>
       </div>
-      <p class="proj-desc">Único ingeniero. Web de producción para estudio de grabación de referencia en Sevilla. Créditos de artistas: <strong>Omar Montes, Lola Índigo, Quevedo, Nicky Jam, Abraham Mateo</strong>.</p>
-      <div class="tags">
-        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Mapbox</span>
-      </div>
-    </div>
 
+      <div class="proj-card">
+        <h3><a href="https://github.com/cmesa-dev/onastudio" target="_blank">ONA Music Studio</a></h3>
+        <div class="proj-year">2024 · <a href="https://cmesa-dev.github.io/onastudio/" target="_blank">demo →</a></div>
+        <p class="proj-desc">Web para estudio de grabación de referencia en Sevilla. Omar Montes, Lola Índigo, Quevedo…</p>
+        <div class="tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Mapbox</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- Habilidades -->
