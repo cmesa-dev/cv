@@ -356,7 +356,8 @@ section h2 {
 
 /* ── Tags ────────────────────────────────── */
 .tags {
-  margin-top: .42rem;
+  margin-top: auto;
+  padding-top: .42rem;
   display: flex;
   flex-wrap: wrap;
   gap: .22rem;
