@@ -577,7 +577,23 @@ a.proj-card { text-decoration: none; color: inherit; }
   .exp-grid { gap: .25rem; page-break-inside: avoid; }
   .proj-grid { gap: .25rem; }
 
-  .tags { display: none !important; }
+  .tags {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0 !important;
+    margin-top: .2rem !important;
+  }
+  .tag {
+    background: transparent !important;
+    color: #475569 !important;
+    font-size: .62rem !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-weight: 500 !important;
+  }
+  .tag::after { content: ' · '; white-space: pre; }
+  .tag:last-child::after { content: ''; }
+
   .proj-hover-label { display: none !important; }
 
   .exp-card-top h3 { font-size: .8rem; }
