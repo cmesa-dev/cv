@@ -340,6 +340,20 @@ section h2 {
   font-weight: 600;
 }
 
+/* Li con duración alineada a la derecha */
+.bullets li.flex-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem;
+}
+.entry-dur {
+  font-size: .72rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 /* ── Tags ────────────────────────────────── */
 .tags {
   margin-top: .42rem;
