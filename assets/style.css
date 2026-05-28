@@ -574,6 +574,7 @@ a.proj-card { text-decoration: none; color: inherit; }
     border-radius: 6px !important;
     break-inside: avoid;
     padding: .7rem .9rem;
+    min-height: 8rem;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
