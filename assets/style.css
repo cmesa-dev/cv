@@ -492,6 +492,12 @@ a.proj-card { text-decoration: none; color: inherit; }
 .cert-item .name,
 .edu-item .degree { font-weight: 600; color: var(--text); }
 
+.cert-year {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
 .cert-item .issuer,
 .edu-item .school {
   font-size: .77rem;
