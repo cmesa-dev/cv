@@ -488,6 +488,13 @@ a.proj-card { text-decoration: none; color: inherit; }
   gap: .8rem 2.5rem;
 }
 
+/* ── Tres columnas ───────────────────────── */
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .8rem 2rem;
+}
+
 .cert-item, .edu-item { font-size: .84rem; }
 
 .cert-item .name,
@@ -551,7 +558,8 @@ a.proj-card { text-decoration: none; color: inherit; }
   .exp-grid { grid-template-columns: 1fr; }
   .proj-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; gap: .5rem 1.2rem; }
-  .two-col { grid-template-columns: 1fr; gap: .8rem; }
+  .two-col   { grid-template-columns: 1fr; gap: .8rem; }
+  .three-col { grid-template-columns: 1fr; gap: .8rem; }
 
   /* Toolbar pegada al fondo, ancho completo */
   .toolbar {
