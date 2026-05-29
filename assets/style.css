@@ -537,17 +537,6 @@ a.proj-card { text-decoration: none; color: inherit; }
   margin-top: .5rem;
 }
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE — Mobile
-   Layout idéntico al desktop, ancho 100%
-═══════════════════════════════════════════ */
-@media (max-width: 860px) {
-  .page {
-    margin: 0;
-    border-radius: 0;
-    max-width: 100%;
-  }
-}
 
 /* ═══════════════════════════════════════════
    PRINT — PDF limpio A4

@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=780"/>
   <title>Carlos Mesa Viera — CV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/style.css?v=22"/>
+  <link rel="stylesheet" href="assets/style.css?v=23"/>
 </head>
 <body>
 
 <div class="toolbar">
   <a href="es.html" class="btn-lang">ES →</a>
-  <button class="btn-pdf" onclick="printDesktop()">
+  <button class="btn-pdf" onclick="window.print()">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     Download PDF
   </button>
@@ -228,16 +228,5 @@
   </div><!-- /.page-body -->
 
 </main>
-<script>
-  function printDesktop() {
-    var vp = document.querySelector('meta[name="viewport"]');
-    var orig = vp.getAttribute('content');
-    vp.setAttribute('content', 'width=780');
-    setTimeout(function() {
-      window.print();
-      setTimeout(function() { vp.setAttribute('content', orig); }, 500);
-    }, 120);
-  }
-</script>
 </body>
 </html>
