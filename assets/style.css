@@ -495,11 +495,11 @@ a.proj-card { text-decoration: none; color: inherit; }
   gap: .8rem 2rem;
 }
 
-/* ── Columna derecha dividida en 2 filas ── */
+/* ── Columna derecha dividida en 2 cols ── */
 .split-col {
-  display: flex;
-  flex-direction: column;
-  gap: .7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .8rem 1.5rem;
 }
 
 .cert-item, .edu-item { font-size: .84rem; }
@@ -567,6 +567,7 @@ a.proj-card { text-decoration: none; color: inherit; }
   .skills-grid { grid-template-columns: 1fr 1fr; gap: .5rem 1.2rem; }
   .two-col   { grid-template-columns: 1fr; gap: .8rem; }
   .three-col { grid-template-columns: 1fr; gap: .8rem; }
+  .split-col { grid-template-columns: 1fr; gap: .8rem; }
 
   /* Toolbar pegada al fondo, ancho completo */
   .toolbar {
